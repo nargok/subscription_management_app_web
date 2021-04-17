@@ -4,7 +4,7 @@
     <div>
       <p>今月の利用料金: {{ monthlyTotalPrice }}円</p>
       <div class="add_service_button">
-        <el-button type="primary" @click="displayGameCreatePage">
+        <el-button type="primary" @click="addService">
           新規登録
         </el-button>
       </div>
@@ -76,6 +76,10 @@ export default class SubscriptionList extends Vue {
   }
   private getAlias(status: string) {
     return getStatusAlias(status);
+  }
+
+  private addService() {
+    this.$router.push("/createService");
   }
 }
 </script>
